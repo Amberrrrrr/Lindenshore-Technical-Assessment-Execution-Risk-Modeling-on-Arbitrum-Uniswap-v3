@@ -44,25 +44,18 @@ This project reflects how I would contribute in a quantitative trading team:
 - Design of rule-based execution controls
 - Translating data insights into deployable trading logic
 
-This is not a trading alpha project, but an **infrastructure-level execution and risk project**.
+This is an **infrastructure-level execution and risk project**.
 
 ## Project Pipeline
 
-Raw on-chain data
-    ↓
-Uniswap v3 Swap Logs (RPC)
-    ↓
-State reconstruction (price, liquidity)
-    ↓
-Execution pressure feature (z)
-    ↓
-Slippage & tail-risk analysis
-    ↓
-Execution rules (filter / resize)
-    ↓
-Static backtest
-    ↓
-Rolling adaptive backtest
+1.Raw on-chain data
+2.Uniswap v3 Swap Logs (RPC)
+3.State reconstruction (price, liquidity)
+4.Execution pressure feature (z)
+5.Slippage & tail-risk analysis
+6.Execution rules (filter / resize)    ↓
+7.Static backtest
+8.Rolling adaptive backtest
 ## Discussion: Why This Data, What I Learned, and How It Can Be Used
 
 ### Why This Data Is Interesting
