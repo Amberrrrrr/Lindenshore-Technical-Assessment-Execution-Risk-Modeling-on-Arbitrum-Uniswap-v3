@@ -79,7 +79,23 @@ Using the execution pressure variable
 ```text
 z = trade_size / in_range_liquidity_(t-1)
 ```
+I observe that average slippage remains relatively stable across different levels of execution pressure. However, the right tail of the slippage distribution increases sharply as z grows, indicating a strongly non-linear relationship between liquidity stress and extreme execution cost.
 
+A small subset of swaps executed under high execution pressure accounts for a disproportionate share of total adverse slippage. Moreover, this relationship is time-varying: during periods of reduced liquidity or heightened activity, the same trade size produces significantly higher tail risk.
+
+This demonstrates that execution risk on Uniswap v3 is best understood as a conditional tail-risk problem driven by liquidity state, rather than a smooth function of trade size.
+
+---
+### How These Findings Can Be Applied
+Based on these observations, execution pressure can be translated into rule-based execution controls.
+
+In this project, I evaluate both static and rolling thresholds on execution pressure to dynamically resize trades. Backtests show that rolling, data-driven thresholds consistently reduce extreme execution losses while preserving most execution notional, and outperform static rules when liquidity conditions change.
+
+Within a trading team, this framework can be used as a pre-trade execution risk layer, informing trade sizing, throttling, or routing decisions before orders are submitted on-chain. It is particularly relevant for systematic strategies where a small number of extreme executions can dominate overall PnL.
+
+Because all signals rely solely on ex-ante observable on-chain information, the approach is suitable for real-time deployment and can be extended to other pools, fee tiers, or chains. More broadly, this project demonstrates how raw on-chain microstructure data can be transformed into deployable execution risk controls, aligning directly with execution-focused trading workflows.
+
+---
 ## How to Run This Project
 
 This repository is organized as a simple, sequential pipeline.  
