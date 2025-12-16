@@ -63,6 +63,29 @@ Execution rules (filter / resize)
 Static backtest
     ↓
 Rolling adaptive backtest
+## Discussion: Why This Data, What I Learned, and How It Can Be Used
+
+### Why This Data Is Interesting
+
+I chose **swap-level data from the USDC–WETH Uniswap v3 pool on Arbitrum** because it allows execution risk to be analyzed using the *exact pool state immediately before each trade*.
+
+Uniswap v3 exposes its internal mechanics on-chain, including price and **in-range liquidity**. This makes it possible to evaluate execution outcomes relative to the liquidity that is truly available at execution time, rather than relying on trade size or aggregated market depth as proxies.
+
+By ordering swaps by `(block_number, log_index)` and conditioning each trade on the previous pool state, the dataset supports a clean construction of execution features without look-ahead bias. This enables direct measurement of how liquidity conditions translate into realized execution cost, which is difficult to observe using higher-level DEX metrics.
+
+The value of this dataset lies in its ability to isolate **execution risk as a microstructure problem**, rather than a price prediction problem.
+
+---
+
+### What I Learned from the Data
+
+The central finding of this project is that **execution losses on Uniswap v3 are dominated by tail events**, not by typical trades.
+
+Using the execution pressure variable
+
+```text
+z = trade_size / in_range_liquidity_(t-1)
+```
 
 ## How to Run This Project
 
