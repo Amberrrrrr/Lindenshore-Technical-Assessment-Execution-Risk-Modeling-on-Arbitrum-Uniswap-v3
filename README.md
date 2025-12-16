@@ -1,3 +1,4 @@
+# Execution Risk Modeling on Arbitrum Uniswap v3 (USDC–WETH)
 ## Executive Summary
 
 This project studies **execution risk on Uniswap v3** from the perspective of
@@ -132,8 +133,6 @@ Key result figures include:
 ```
 
 
-
-# Execution Risk Modeling on Arbitrum Uniswap v3 (USDC–WETH)
 
 ## What Problem Does This Project Solve?
 
