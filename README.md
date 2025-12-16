@@ -48,13 +48,13 @@ This is an **infrastructure-level execution and risk project**.
 
 ## Project Pipeline
 
-1.Raw on-chain data
-2.Uniswap v3 Swap Logs (RPC)
-3.State reconstruction (price, liquidity)
-4.Execution pressure feature (z)
-5.Slippage & tail-risk analysis
-6.Execution rules (filter / resize)    ↓
-7.Static backtest
+1.Raw on-chain data--
+2.Uniswap v3 Swap Logs (RPC)--
+3.State reconstruction (price, liquidity)--
+4.Execution pressure feature (z)--
+5.Slippage & tail-risk analysis--
+6.Execution rules (filter / resize)--
+7.Static backtest--
 8.Rolling adaptive backtest
 ## Discussion: Why This Data, What I Learned, and How It Can Be Used
 
